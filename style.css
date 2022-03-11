@@ -1,0 +1,34 @@
+.content {
+    text-align-last: center;
+}
+
+.content p {
+    margin: 10px;
+}
+
+body {
+    font-size: 45px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border-style: dotted;
+}
+
+tr {
+    height: 75px;
+    font-weight: bold;
+}
+
+td {
+    width: 75px;
+}
+
+.first{
+    height: 37.5px;
+    font-weight: bold;
+}
+
+#time p {
+    display: contents;
+}
