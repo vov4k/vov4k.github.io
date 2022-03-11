@@ -10,9 +10,13 @@ body {
     font-size: 45px;
 }
 
-table, th, td {
+table, td {
     border-collapse: collapse;
     border-style: dotted;
+}
+
+table{
+    margin: auto;
 }
 
 tr {
@@ -31,4 +35,21 @@ td {
 
 #time p {
     display: contents;
+}
+
+
+#time{
+    width: 50%;
+    margin-top: 10px;
+    text-align-last: left;
+    border-style: none;
+}
+
+#time td{
+    border-style: none;
+}
+
+.right{
+    padding-right: 10px;
+    text-align-last: right !important;
 }

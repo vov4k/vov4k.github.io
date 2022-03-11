@@ -5,37 +5,45 @@ let endShow = document.getElementById("end"); // Берём блок для по
 let nowShow = document.getElementById("now"); // Берём блок для показа времени
 let divTime = document.getElementById("time"); // Берём блок для показа времени
 
+console.log("startTimer");
 Date.prototype.addMinutes = function (h) {
-    this.setMinutes(this.getMinutes() + h);
+    this.setSeconds(this.getSeconds() + h);
     return this;
 }
 
-buttonRun.addEventListener('click', function () {
-    timeMinut = 5459;
+function startTimer(timeStart) {
+    timeSeconds = timeStart;
     var date = new Date()
-    startShow.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
-    date.addMinutes(90);
-    endShow.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
+    startShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
+    date.addMinutes(timeSeconds);
+    endShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
 
     divTime.style.display = "";
     buttonRun.style.display = "none";
 
-    document.documentElement.requestFullscreen();
+    //document.documentElement.requestFullscreen();
+
+}
+
+buttonRun.addEventListener('click', function () {
+    startTimer(5400);
 })
 
 timer = setInterval(function () {
-    seconds = timeMinut % 60 // Получаем секунды
-    minutes = timeMinut / 60 % 60 // Получаем минуты
-    hour = timeMinut / 60 / 60 % 60 // Получаем часы
+    seconds = timeSeconds % 60 // Получаем секунды
+    minutes = timeSeconds / 60 % 60 // Получаем минуты
+    hour = timeSeconds / 60 / 60 % 60 // Получаем часы
 
-    if (timeMinut <= 0) {
+    if (timeSeconds <= 0) {
         clearInterval(timer);
         alert("Время закончилось");
     } else {
-        timerShow.innerHTML = `${Math.trunc(hour)}:${Math.trunc(minutes)}`;
+        timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
         var date = new Date()
-        nowShow.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
+        nowShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
     }
-    --timeMinut; // Уменьшаем таймер
+    --timeSeconds; // Уменьшаем таймер
 
 }, 1000)
+
+

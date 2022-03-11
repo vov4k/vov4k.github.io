@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Олимпиада ОДО</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Олимпиада ОДО</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="content">
-  <p>Олимпиада отделения</p>
-  <p>дополнительного образования</p>
-  <p>Математика</p>
-  <p>ФАМИЛИЯ ИМЯ</p>
-  <p>9 класс, ШКОЛА</p>
-  <table style="margin: auto">
-    <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-      <td>&#931;</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  <button id="button">Запустить</button>
-  <br>
-  <div id="time" style="display: none">
-    Начало: <p id="start">1:29:50</p> <br>
-    Конец: <p id="end">1:29:50</p> <br>
-    До конца: <p id="timer">1:29:50</p> <br>
-    Сейчас: <p id="now">1:29:50</p> <br>
-  </div>
-  <script src="script.js"></script>
+    <p>Олимпиада ОДО</p>
+    <p>Математика</p>
+    <p>ФАМИЛИЯ ИМЯ</p>
+    <p>9 класс, ШКОЛА</p>
+    <p>Кружки ОДО – предмет, день</p>
+    <table style="margin: auto">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>&#931;</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <button id="button">Запустить</button>
+    <table id="time" style="display: none">
+        <tr>
+            <td class="right">Начало</td>
+            <td><p id="start"></p></td>
+        </tr>
+        <tr>
+            <td class="right">Конец</td>
+            <td><p id="end"></p></td>
+        </tr>
+        <tr>
+            <td class="right">До конца</td>
+            <td><p id="timer"></p></td>
+        </tr>
+        <tr>
+            <td class="right">Сейчас</td>
+            <td><p id="now"></p></td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
 </div>
 </body>
 </html>
