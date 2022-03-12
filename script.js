@@ -21,8 +21,9 @@ function startTimer(timeStart) {
     divTime.style.display = "";
     buttonRun.style.display = "none";
 
-    //document.documentElement.requestFullscreen();
-
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    }
 }
 
 buttonRun.addEventListener('click', function () {
