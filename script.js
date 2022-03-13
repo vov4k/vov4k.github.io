@@ -35,9 +35,14 @@ timer = setInterval(function () {
     minutes = timeSeconds / 60 % 60 // Получаем минуты
     hour = timeSeconds / 60 / 60 % 60 // Получаем часы
 
-    if (timeSeconds <= 120) {
+
+    if (timeSeconds <= 0) {
         clearInterval(timer);
-        window.location.href = "/end.html";
+    } else if (timeSeconds <= 900) {
+        let tttt = document.getElementsByClassName("f_table"); // Берём блок для показа времени
+        tttt = tttt[0];
+        tttt.innerHTML = `Вы можете оценить огранизацию олипиады заполнив форму
+<img src="/frame.png" width="600">`;
     } else {
         timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
         var date = new Date()
