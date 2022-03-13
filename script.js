@@ -43,6 +43,11 @@ timer = setInterval(function () {
         tttt = tttt[0];
         tttt.innerHTML = `Вы можете оценить огранизацию олипиады заполнив форму
 <img src="/frame.png" width="600">`;
+
+        timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
+        var date = new Date()
+        nowShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
+
     } else {
         timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
         var date = new Date()
