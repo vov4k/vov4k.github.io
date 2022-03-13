@@ -35,7 +35,7 @@ timer = setInterval(function () {
     minutes = timeSeconds / 60 % 60 // Получаем минуты
     hour = timeSeconds / 60 / 60 % 60 // Получаем часы
 
-    if (timeSeconds <= 0) {
+    if (timeSeconds <= 120) {
         clearInterval(timer);
         window.location.href = "/end.html";
     } else {
