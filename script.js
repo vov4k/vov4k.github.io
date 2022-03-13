@@ -37,7 +37,7 @@ timer = setInterval(function () {
 
     if (timeSeconds <= 0) {
         clearInterval(timer);
-        alert("Время закончилось");
+        window.location.href = "/end.html";
     } else {
         timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
         var date = new Date()
