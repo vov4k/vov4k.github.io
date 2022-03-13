@@ -38,7 +38,7 @@ timer = setInterval(function () {
 
     if (timeSeconds <= 0) {
         clearInterval(timer);
-    } else if (timeSeconds <= 900) {
+    } else if (timeSeconds <= 1800) {
         let tttt = document.getElementsByClassName("f_table"); // Берём блок для показа времени
         tttt = tttt[0];
         tttt.innerHTML = `Вы можете оценить огранизацию олипиады заполнив форму
