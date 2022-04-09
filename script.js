@@ -13,7 +13,7 @@ Date.prototype.addMinutes = function (h) {
 
 function startTimer(timeStart) {
     timeSeconds = timeStart;
-    var date = new Date()
+    const date = new Date();
     startShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
     date.addMinutes(timeSeconds);
     endShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
@@ -31,26 +31,25 @@ buttonRun.addEventListener('click', function () {
 })
 
 timer = setInterval(function () {
+    let date;
     seconds = timeSeconds % 60 // Получаем секунды
     minutes = timeSeconds / 60 % 60 // Получаем минуты
     hour = timeSeconds / 60 / 60 % 60 // Получаем часы
 
-
     if (timeSeconds <= 0) {
         clearInterval(timer);
-    } else if (timeSeconds <= 1800) {
-        let tttt = document.getElementsByClassName("f_table"); // Берём блок для показа времени
-        tttt = tttt[0];
-        tttt.innerHTML = `Вы можете оценить огранизацию олипиады заполнив форму
-<img src="/frame.png" width="600">`;
+    } else if (window.location.href.slice(-7, -6) === 's' && timeSeconds <= 1800) {
+        let table = document.getElementsByClassName("f_table"); // Берём блок для показа времени
+        table = table[0];
+        table.innerHTML = `<img src="/frame.png" width="600">`;
 
         timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
-        var date = new Date()
+        date = new Date();
         nowShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
 
     } else {
         timerShow.innerHTML = `${("0" + Math.trunc(hour)).slice(-2)}:${("0" + Math.trunc(minutes)).slice(-2)}`;
-        var date = new Date()
+        date = new Date();
         nowShow.innerHTML = `${("0" + date.getHours()).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}`;
     }
     --timeSeconds; // Уменьшаем таймер
