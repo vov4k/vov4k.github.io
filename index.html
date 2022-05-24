@@ -2,17 +2,49 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Вступительная олимпиада</title>
+    <title>Последний звонок 2022. Викторина</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .out {
+            margin-left: auto;
+            margin-right: auto;
+            height: 100vh;
+            width: 70vw;
+            text-align: center;
+        }
+
+        .out input {
+            width: 250px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        #register .inner {
+            position: absolute;
+            width: inherit;
+            top: 50%;
+        }
+    </style>
 </head>
 <body>
-<p>Математика:</p>
-<a href="math7.html">7 класс</a> <br>
-<a href="math8.html">8 класс</a> <br>
-<a href="math9.html">9 класс</a>
-
-<p>Физика:</p>
-<a href="physics7.html">7 класс</a> <br>
-<a href="physics8.html">8 класс</a> <br>
-<a href="physics9.html">9 класс</a> <br>
+<div id="register" class="out">
+    <div class="inner">
+        <input type="text" id="name" placeholder="Ваша фамилия"> <br>
+        <input id="send_name" type="button" value="Зарегистрироваться">
+    </div>
+</div>
+<div hidden id="question" class="out">
+    <div class="inner">
+        <h1 id="question_id_text">Вопрос 1</h1>
+        <ol id="hints"></ol>
+        <input type="text" id="answer" placeholder="ФАМИЛИЯ преподавателя"> <br>
+        <input id="send_answer" type="submit" value="Ответить">
+    </div>
+</div>
+<h1 id="wait" hidden>Ждём следующего вопроса :)</h1>
+<h1 id="answer_accepted" hidden>Ответ приянт!</h1>
+<h2 id="points" hidden>Сейчас у Вас 0 очков!</h2>
+<div id="messages"></div>
+<script src="client.js"></script>
 </body>
 </html>
