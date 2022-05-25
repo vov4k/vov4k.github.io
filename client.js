@@ -1,6 +1,6 @@
 var socket
 document.getElementById("send_name").onclick = function () {
-    socket = new WebSocket(`ws://taksa-phts.herokuapp.com/play/1?name=${document.getElementById("name").value}`)
+    socket = new WebSocket(`wss://taksa-phts.herokuapp.com/play/1?name=${document.getElementById("name").value}`)
     document.getElementById("register").hidden = true
     document.getElementById("wait").hidden = false
     document.getElementById("points").hidden = false
